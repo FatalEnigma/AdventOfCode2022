@@ -14,7 +14,6 @@ var embedFs embed.FS
 var inputFile = "input.txt"
 
 func main() {
-
 	fmt.Println(fmt.Sprintf("Part 1: %d", part1()))
 	fmt.Println(fmt.Sprintf("Part 2: %d", part2()))
 }
