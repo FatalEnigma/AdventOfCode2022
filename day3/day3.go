@@ -17,6 +17,14 @@ func main() {
 	fmt.Printf("Part 2: %d", part2())
 }
 
+func getPriority(char rune) int {
+	if unicode.IsUpper(char) {
+		return int(char) - 38
+	} else {
+		return int(char) - 96
+	}
+}
+
 func part1() int {
 	fileToRead, readError := embedFs.Open(inputFile)
 
@@ -43,11 +51,7 @@ func part1() int {
 
 		for _, char := range rucksack2 {
 			if charMap[char] {
-				if unicode.IsUpper(char) {
-					prioritySum += int(char) - 38
-				} else {
-					prioritySum += int(char) - 96
-				}
+				prioritySum += getPriority(char)
 				break
 			}
 		}
@@ -89,11 +93,7 @@ func part2() int {
 		} else {
 			for _, char := range row {
 				if charMap2[char] {
-					if unicode.IsUpper(char) {
-						prioritySum += int(char) - 38
-					} else {
-						prioritySum += int(char) - 96
-					}
+					prioritySum += getPriority(char)
 					break
 				}
 			}
