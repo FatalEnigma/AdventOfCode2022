@@ -32,8 +32,8 @@ var shouldPlay = map[Key]string{
 }
 
 func main() {
-	fmt.Println(fmt.Sprintf("Part 1: %d", part1()))
-	fmt.Println(fmt.Sprintf("Part 2: %d", part2()))
+	fmt.Printf("Part 1: %d\n", part1())
+	fmt.Printf("Part 2: %d", part2())
 }
 
 func part1() int {
