@@ -49,6 +49,7 @@ func (s *Stack) Transfer(destination *Stack, num int) int {
 	return numMoved
 }
 
+// Copy returns a copy of the stack
 func (s *Stack) Copy() Stack {
 	stackCopy := *s
 	temp := Stack{}
