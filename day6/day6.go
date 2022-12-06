@@ -38,23 +38,23 @@ func parseInput() (input string) {
 }
 
 func getMarker(inputString string, numUnique int) int {
-	set := map[string]int{}
+	counter := map[string]int{}
 
 	for x := 0; x <= numUnique-1; x++ {
-		set[string(inputString[x])] += 1
+		counter[string(inputString[x])] += 1
 	}
 
 	for x := 0; x < len(inputString); x++ {
 
-		set[string(inputString[x])] -= 1
+		counter[string(inputString[x])] -= 1
 
-		if set[string(inputString[x])] == 0 {
-			delete(set, string(inputString[x]))
+		if counter[string(inputString[x])] == 0 {
+			delete(counter, string(inputString[x]))
 		}
 
-		set[string(inputString[x+numUnique])] += 1
+		counter[string(inputString[x+numUnique])] += 1
 
-		if len(set) == numUnique {
+		if len(counter) == numUnique {
 			return x + numUnique + 1
 		}
 	}
